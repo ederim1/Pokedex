@@ -460,6 +460,7 @@
 
 	div#topcross
 	{
+		cursor:grab ;
 		width: 30px;
 		height: 30px;
 		background-color: #222;
@@ -555,6 +556,7 @@
 
 	div#botcross
 	{
+		cursor: grab;
 		width: 30px;
 		height: 30px;
 		background-color: #222;
@@ -728,6 +730,7 @@
 		z-index: 1;
 		font-size: 13px;
 		font-family: arial, sans-serif;
+		overflow: hidden;
 
 		position: absolute;
 		top: 130px;
@@ -1018,3 +1021,57 @@
 	}
 
 }
+
+
+
+.card {
+	border: 3px solid yellow;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	margin: 20px;
+	background-color: #E3F2FD;
+  }
+  
+  .name {
+	font-size: 28px;
+	font-weight: bold;
+	font-family: "Arial Black", sans-serif;
+	color: #1565C0;
+  }
+  
+  .type {
+	margin-top: 15px;
+	font-weight: bold;
+	font-family: "Comic Sans MS", cursive;
+	color: #1E88E5;
+  }
+  
+  .attribute {
+	margin-top: 15px;
+	font-family: "Verdana", sans-serif;
+	color: #424242;
+  }
+  
+  .moves {
+	margin-top: 15px;
+  }
+  
+  .move {
+	margin-bottom: 5px;
+	font-family: "Tahoma", sans-serif;
+	color: #333333;
+  }
+  
+  .weaknesses,
+  .resistances {
+	margin-top: 15px;
+  }
+  
+  .weaknesses .type,
+  .resistances .type {
+	font-weight: bold;
+	font-family: "Courier New", monospace;
+	color: #880E4F;
+  }
+  
