@@ -16,12 +16,24 @@ function changeActive(){
     let pokemonType = clickedItem.innerHTML
     console.log(pokemonType)
     if (pokemonType === "All"){
-        document.querySelectorAll('.pokecard').style.display = "none";
+        document.getElementById('pokemonDisplay').style.gridTemplateRows = '1fr 1fr 1fr 1fr' 
+        let list = document.querySelectorAll('.pokecard')
+        
+        list.forEach(function(element){
+            element.style.display ="";
+        })
+
         console.log('runnning')
         
     }
     else{
-
+        let list = document.querySelectorAll('.pokecard')
+        document.getElementById('pokemonDisplay').style.gridTemplateRows = '1fr' 
+        
+        list.forEach(function(element){
+            element.style.display ="";
+        })
+        filter(pokemonType)
     }
 }
 
@@ -115,7 +127,15 @@ function output(pokemon){
 }
 
 function filter(pokemonType){
+    let list = document.querySelectorAll('.pokecard')
+        
+        list.forEach(function(element){
+            if (!element.classList.contains(pokemonType)){
+                element.style.display = 'none';
+            }
+        })
 
+        console.log('runnning')
 }
 
 getAllPokemon()
