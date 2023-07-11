@@ -81,12 +81,18 @@ fetch("https://pokebattleapi.onrender.com/pokemon")
     const waterButton = document.getElementById("waterButton");
     const electricButton = document.getElementById("electricButton");
     const grassButton = document.getElementById("grassButton");
+    const barButton1 = document.getElementById("barbutton1");
+    const barButton2 = document.getElementById("barbutton2");
+    const yellowBox1 = document.getElementById("yellowBox1");
+    const yellowBox2 = document.getElementById("yellowBox2");
 
     // Function to update the HTML with the data
     function updatePokemonData(pokemon) {
       // Update the stats div
       statsDiv.innerHTML = `
-        <strong>Name:</strong> ${pokemon.name} <br/>
+        <strong">Name:</strong> <span id='pokemon_name'>${
+          pokemon.name
+        } </span><br/>
         <strong>Type:</strong> ${pokemon.type.join(", ")} <br/>
         <strong>Height:</strong> ${pokemon.height} <br/>
         <strong>Weight:</strong> ${pokemon.weight} <br/><br/>
@@ -100,6 +106,14 @@ fetch("https://pokebattleapi.onrender.com/pokemon")
     // Initialize the index to cycle through the Pokemon data
     let index = 0;
     let filteredData = data; // Initially set filteredData as the complete data
+
+    // Check if there is data in local storage
+    const storedClickedPokemon = localStorage.getItem("clickedPokemon");
+
+    // Initialize the clickedPokemon array based on the local storage data
+    let clickedPokemon = storedClickedPokemon
+      ? JSON.parse(storedClickedPokemon)
+      : [];
 
     // Function to update the displayed Pokemon data
     function updateDisplayedPokemon() {
@@ -132,6 +146,7 @@ fetch("https://pokebattleapi.onrender.com/pokemon")
 
     // Call the updateDisplayedPokemon function initially
     updateDisplayedPokemon();
+    displayAddedPokemon();
 
     // Add event listener to topcrossDiv
     topCrossDiv.addEventListener("click", updateDisplayedPokemon);
@@ -151,7 +166,64 @@ fetch("https://pokebattleapi.onrender.com/pokemon")
       filterDataByType("Electric")
     );
     grassButton.addEventListener("click", () => filterDataByType("Grass"));
+
+    // Function to handle the click event on barButton1
+    function handleBarButton1Click() {
+      const pokemonNameElement = document.getElementById("pokemon_name");
+      const pokemonName = pokemonNameElement.textContent;
+      clickedPokemon.push(pokemonName);
+
+      // Store the clickedPokemon array in local storage
+      localStorage.setItem("clickedPokemon", JSON.stringify(clickedPokemon));
+
+      displayAddedPokemon();
+    }
+    // Function to handle the click event on barButton2
+    function handleBarButton2Click() {
+      if (clickedPokemon.length > 0) {
+        clickedPokemon.pop();
+        displayAddedPokemon();
+        // Store the updated clickedPokemon array in local storage
+        localStorage.setItem("clickedPokemon", JSON.stringify(clickedPokemon));
+      }
+      console.log(clickedPokemon);
+      console.log(storedClickedPokemon);
+    }
+
+    function displayAddedPokemon() {
+      // Update the HTML with the updated clickedPokemon list
+
+      yellowBox1.innerHTML = clickedPokemon
+        .slice(0, 2)
+        .map((name) => `<p>${name}</p>`)
+        .join("");
+      yellowBox2.innerHTML = clickedPokemon
+        .slice(2)
+        .map((name) => `<p>${name}</p>`)
+        .join("");
+    }
+
+    // Add event listeners to barButton1 and barButton2
+    barButton1.addEventListener("click", handleBarButton1Click);
+    barButton2.addEventListener("click", handleBarButton2Click);
+
+    // Load the clickedPokemon array from local storage
+
+    // if (storedClickedPokemon) {
+    //   if (storedClickedPokemon.length < 2) {
+    //     clickedPokemon = JSON.parse(storedClickedPokemon);
+    //     yellowBox1.innerHTML = clickedPokemon
+    //       .map((name) => `<p>${name}</p>`)
+    //       .join("");
+    //   } else {
+    //     clickedPokemon = JSON.parse(storedClickedPokemon);
+    //     yellowBox2.innerHTML = clickedPokemon
+    //       .map((name) => `<p>${name}</p>`)
+    //       .join("");
+    //   }
+    // }
   })
+
   .catch((error) => {
     console.log("Error:", error);
   });

@@ -772,6 +772,10 @@
 		background-color: #003300;
 		float: left;
 		margin-right: 7px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 
 		border-radius: 10px;
 		-webkit-border-radius: 10px;
