@@ -825,20 +825,21 @@
 	div#barbutton4 h2, div#barbutton3 h2 {
         margin: auto;
         margin-top: 2.5px;
-		padding-left: 5px;
-        font-size: 12px;
+		padding-left: px;
         font-family:fantasy;
 		
     }
 	div#barbutton4 h2 {
 		color: #50fb05;
 		text-decoration: none;
-		-webkit-text-stroke: .3px #057b05
+		-webkit-text-stroke: .3px #057b05;
+		font-size: 11px
 	}
 	div#barbutton3 h2 {
 		color: #bb0505;
 		text-decoration: none;
-		-webkit-text-stroke: .3px #fb6505
+		-webkit-text-stroke: .3px #fb6505;
+		font-size: 12px;
 	}
 	div#barbutton4
 	{
