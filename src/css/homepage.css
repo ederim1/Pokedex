@@ -331,7 +331,43 @@ footer span {
         margin: auto auto;
         width: auto;
         text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
     }
     main {margin: auto auto;
     width: auto;
     text-align: center;}
+
+    #topOfHeader {
+        display: flex;
+    }
+
+    #pokedexButton, #signIn {
+        width: 200px;
+        margin: auto auto;
+        text-align: center;
+    
+    }
+    #pokedexButton div h1 {
+        margin: auto auto;
+        margin-top: 16px;
+        font-size: xx-large;
+        font-family:fantasy;
+    }
+    #pokedexButton div {
+        width: 180px;
+        background-color: blue;
+        height: 40px;
+        border-radius: 50px;
+        text-align: center;
+        margin: auto auto;
+        margin-top: -10px;
+    }
+    #pokedexButton a {
+        text-decoration: none;
+        color: white;
+    }
+    .pokecard{
+        background-color: lightcoral;
+    }
