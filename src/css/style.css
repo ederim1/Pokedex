@@ -1,3 +1,4 @@
+
 * {
 	margin: 0;
 	padding: 0;
@@ -375,7 +376,7 @@
 		-o-border-radius: 30px;
 	}
 
-	div#bigbluebutton
+	#bigbluebutton
 	{
 		height: 50px;
 		width: 50px;
@@ -400,7 +401,7 @@
 		-moz-box-shadow: -3px 2px #001c91;
 		-o-box-shadow: -3px 2px #001c91;
 	}
-
+	
 	div#barbutton1
 	{
 		height: 13px;
@@ -795,10 +796,10 @@
 		-moz-box-shadow: -1px 2px #001c91;
 		-o-box-shadow: -1px 2px #001c91;
 	}
-
+	
 	div#barbutton3
 	{
-		height: 13px;
+		height: 20px;
 		width: 50px;
 		z-index: 1;
 
@@ -821,10 +822,27 @@
 		-moz-box-shadow: -1px 2px #004200;
 		-o-box-shadow: -1px 2px #004200;
 	}
-
+	div#barbutton4 h2, div#barbutton3 h2 {
+        margin: auto;
+        margin-top: 2.5px;
+		padding-left: 5px;
+        font-size: 12px;
+        font-family:fantasy;
+		
+    }
+	div#barbutton4 h2 {
+		color: #50fb05;
+		text-decoration: none;
+		-webkit-text-stroke: .3px #057b05
+	}
+	div#barbutton3 h2 {
+		color: #bb0505;
+		text-decoration: none;
+		-webkit-text-stroke: .3px #fb6505
+	}
 	div#barbutton4
 	{
-		height: 13px;
+		height: 20px;
 		width: 50px;
 		z-index: 1;
 

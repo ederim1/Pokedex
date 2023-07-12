@@ -343,7 +343,7 @@ footer span {
         display: flex;
     }
 
-    #pokedexButton, #signIn {
+    #pokedexButton, #signIn #signOut {
         width: 200px;
         margin: auto auto;
         text-align: center;
