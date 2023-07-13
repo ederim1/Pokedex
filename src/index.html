@@ -1,100 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Pokedex</title>
-    <script src="/js/main.js" defer></script>
-  </head>
-  <body>
-    <div id="pokedex">
-      <div id="left">
-        <div id="logo"></div>
-        <div id="bg_curve1_left"></div>
-        <div id="bg_curve2_left"></div>
-        <div id="curve1_left">
-          <div id="buttonGlass">
-            <div id="reflect"></div>
-          </div>
-          <div id="miniButtonGlass1"></div>
-          <div id="miniButtonGlass2"></div>
-          <div id="miniButtonGlass3"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poke Home Page</title>
+    <link rel="stylesheet" href="css/homepage.css">
+
+</head>
+<body>
+    <header>
+        <div id="topOfHeader">
+            <img src="https://d33wubrfki0l68.cloudfront.net/547a9970a7d43be64cdf108f330a8dd372d72c90/45801/images/pokemon_logo.png" alt="pokemon logo">
+            <section id="pokedexButton">
+                <a href="pokedex.html">
+                    <div>
+                        <h1>Pokedex</h1>
+                    </div>
+                </a>
+            
+                <div id="signIn"> <a href="https://pokebattleapi.onrender.com/login">
+                <div><h1>Sign In</h1></div></a>
+                </div>
+                <div id="signOut"> <a href="https://pokebattleapi.onrender.com/logout">
+                    <div><h1>Sign Out</h1></div></a>
+                    </div>
+            
+            </section>
         </div>
-        <div id="curve2_left">
-          <div id="junction">
-            <div id="junction1"></div>
-            <div id="junction2"></div>
-          </div>
-        </div>
-        <div id="screen">
-          <div id="topPicture">
-            <div id="buttontopPicture1"></div>
-            <div id="buttontopPicture2"></div>
-          </div>
-          <div id="picture">
-            <img
-              src="https://images.squarespace-cdn.com/content/6306aaf3653fde34203ac5c0/1661383146481-18EE1D2WP2LT4PRKSX6P/Pokemon-%28Charmander%29.gif?content-type=image%2Fgif"
-              alt="psykokwak"
-              height="170"
-            />
-          </div>
-          <div id="buttonbottomPicture"></div>
-          <div id="speakers">
-            <div class="sp"></div>
-            <div class="sp"></div>
-            <div class="sp"></div>
-            <div class="sp"></div>
-          </div>
-        </div>
-        <div id="bigbluebutton"></div>
-        <div id="barbutton1"></div>
-        <div id="barbutton2"></div>
-        <div id="cross">
-          <div id="leftcross">
-            <div id="leftT"></div>
-          </div>
-          <div id="topcross">
-            <div id="upT"></div>
-          </div>
-          <div id="rightcross">
-            <div id="rightT"></div>
-          </div>
-          <div id="midcross">
-            <div id="midCircle"></div>
-          </div>
-          <div id="botcross">
-            <div id="downT"></div>
-          </div>
-        </div>
-      </div>
-      <div id="right">
-        <div id="stats"></div>
-        <div id="blueButtons1">
-          <div class="blueButton" id="fireButton">🔥</div>
-          <div class="blueButton" id="waterButton">💧</div>
-          <div class="blueButton" id="electricButton">⚡️</div>
-          <div class="blueButton" id="grassButton">☘️</div>
-          <div class="blueButton"></div>
-        </div>
-        <div id="blueButtons2">
-          <div class="blueButton"></div>
-          <div class="blueButton"></div>
-          <div class="blueButton"></div>
-          <div class="blueButton"></div>
-          <div class="blueButton"></div>
-        </div>
-        <div id="miniButtonGlass4"></div>
-        <div id="miniButtonGlass5"></div>
-        <div id="barbutton3"></div>
-        <div id="barbutton4"></div>
-        <div id="yellowBox1"></div>
-        <div id="yellowBox2"></div>
-        <div id="bg_curve1_right"></div>
-        <div id="bg_curve2_right"></div>
-        <div id="curve1_right"></div>
-        <div id="curve2_right"></div>
-      </div>
-    </div>
-  </body>
+    <nav>
+        <ul class="filter">
+          <li class="card active">All</li>
+          <li class="card">Grass</li>
+          <li class="card">Fire</li>
+          <li class="card">Water</li>
+          <li class="card">Electric</li>
+        </ul>
+      </nav>
+    </header>
+    <main >
+        <div id="pokemonDisplay">
+
+       </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+<script src="js\homepage.js"></script>
 </html>
