@@ -1,15 +1,39 @@
-// Check if the cookie named "appSession" exists
-if (document.cookie.includes("appSession")) {
-  // If the cookie exists, hide the "signIn" div
-  var signInDiv = document.getElementById("signIn");
-  if (signInDiv) {
-    signInDiv.style.display = "none";
-  }
-} else {
-  // If the cookie doesn't exist, hide the "signOut" div
-  var signOutDiv = document.getElementById("signOut");
-  if (signOutDiv) {
-    signOutDiv.style.display = "none";
+// Get the URL parameters
+var urlParams = new URLSearchParams(window.location.search);
+
+// Retrieve the email and picture values
+var email = urlParams.get("email");
+var picture = urlParams.get("picture");
+
+// Output the values
+// console.log('Email:', email);
+// console.log('Picture:', picture);
+
+// Check if the picture parameter has a value
+if (picture) {
+  // Create an image element
+  var image = document.createElement("img");
+
+  // Set the src attribute to the picture value
+  image.src = picture;
+
+  // Apply CSS styles
+  image.style.maxWidth = "100%";
+  image.style.maxHeight = "100%";
+  image.style.borderRadius = "50%";
+  image.style.objectFit = "cover";
+
+  // Find the buttonGlass div
+  var buttonGlassDiv = document.getElementById("buttonGlass");
+
+  // Apply CSS styles to the buttonGlass div
+  buttonGlassDiv.style.display = "flex";
+  buttonGlassDiv.style.justifyContent = "center";
+  buttonGlassDiv.style.alignItems = "center";
+  buttonGlassDiv.style.overflow = "hidden";
+  // Append the image to the buttonGlass div
+  if (buttonGlassDiv) {
+    buttonGlassDiv.appendChild(image);
   }
 }
 
