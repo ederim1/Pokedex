@@ -90,6 +90,10 @@ fetch("https://pokebattleapi.onrender.com/pokemon")
       // Update the HTML with the current Pokemon's data
       updatePokemonData(currentPokemon);
 
+      // Set the src attribute of the image to currentPokemon.image
+      const imageElement = document.querySelector("#picture img");
+      imageElement.src = currentPokemon.image;
+
       // Increment the index and wrap around if necessary
       index = (index + 1) % filteredData.length;
     }
