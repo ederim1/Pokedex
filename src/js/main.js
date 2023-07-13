@@ -1,74 +1,17 @@
-// fetch("https://pokebattleapi.onrender.com/pokemon")
-//   .then((response) => response.json())
-//   .then((pokemonData) => {
-//     const pokemonContainer = document.getElementById("pokemon-container");
-
-//     pokemonData.forEach((pokemon) => {
-//       const card = document.createElement("div");
-//       card.classList.add("card");
-
-//       const name = document.createElement("div");
-//       name.classList.add("name");
-//       name.textContent = pokemon.name;
-//       card.appendChild(name);
-
-//       const type = document.createElement("div");
-//       type.classList.add("type");
-//       type.textContent = "Type: " + pokemon.type.join(", ");
-//       card.appendChild(type);
-
-//       const hp = document.createElement("div");
-//       hp.classList.add("attribute");
-//       hp.textContent = "HP: " + pokemon.hp;
-//       card.appendChild(hp);
-
-//       const weight = document.createElement("div");
-//       weight.classList.add("attribute");
-//       weight.textContent = "Weight: " + pokemon.weight;
-//       card.appendChild(weight);
-
-//       const height = document.createElement("div");
-//       height.classList.add("attribute");
-//       height.textContent = "Height: " + pokemon.height;
-//       card.appendChild(height);
-
-//       const moves = document.createElement("div");
-//       moves.classList.add("moves");
-//       moves.textContent = "Moves:";
-//       pokemon.moves.forEach((move) => {
-//         const moveElement = document.createElement("div");
-//         moveElement.classList.add("move");
-//         moveElement.textContent =
-//           move.name + " (Damage: " + move.damage + ") - " + move.text;
-//         moves.appendChild(moveElement);
-//       });
-//       card.appendChild(moves);
-
-//       const weaknesses = document.createElement("div");
-//       weaknesses.classList.add("weaknesses");
-//       weaknesses.textContent = "Weaknesses:";
-//       pokemon.weaknesses.forEach((weakness) => {
-//         const weaknessElement = document.createElement("div");
-//         weaknessElement.textContent =
-//           weakness.type + " (Value: " + weakness.value + ")";
-//         weaknesses.appendChild(weaknessElement);
-//       });
-//       card.appendChild(weaknesses);
-
-//       const resistances = document.createElement("div");
-//       resistances.classList.add("resistances");
-//       resistances.textContent = "Resistances:";
-//       pokemon.resistances.forEach((resistance) => {
-//         const resistanceElement = document.createElement("div");
-//         resistanceElement.textContent =
-//           resistance.type + " (Value: " + resistance.value + ")";
-//         resistances.appendChild(resistanceElement);
-//       });
-//       card.appendChild(resistances);
-
-//       pokemonContainer.appendChild(card);
-//     });
-//   });
+// Check if the cookie named "appSession" exists
+if (document.cookie.includes("appSession")) {
+  // If the cookie exists, hide the "signIn" div
+  var signInDiv = document.getElementById("signIn");
+  if (signInDiv) {
+    signInDiv.style.display = "none";
+  }
+} else {
+  // If the cookie doesn't exist, hide the "signOut" div
+  var signOutDiv = document.getElementById("signOut");
+  if (signOutDiv) {
+    signOutDiv.style.display = "none";
+  }
+}
 
 // Fetch data from the API
 fetch("https://pokebattleapi.onrender.com/pokemon")
@@ -169,10 +112,11 @@ fetch("https://pokebattleapi.onrender.com/pokemon")
 
     // Function to handle the click event on barButton1
     function handleBarButton1Click() {
-      const pokemonNameElement = document.getElementById("pokemon_name");
-      const pokemonName = pokemonNameElement.textContent;
-      clickedPokemon.push(pokemonName);
-
+      if (clickedPokemon.length < 4) {
+        const pokemonNameElement = document.getElementById("pokemon_name");
+        const pokemonName = pokemonNameElement.textContent;
+        clickedPokemon.push(pokemonName);
+      }
       // Store the clickedPokemon array in local storage
       localStorage.setItem("clickedPokemon", JSON.stringify(clickedPokemon));
 

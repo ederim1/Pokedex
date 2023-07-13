@@ -404,6 +404,9 @@
 	
 	div#barbutton1
 	{
+		cursor: grab;
+		text-align: center;
+		font-size: 15px;
 		height: 13px;
 		width: 50px;
 
@@ -426,9 +429,20 @@
 		-moz-box-shadow: -1px 2px #004200;
 		-o-box-shadow: -1px 2px #004200;
 	}
+	div#barbutton1:hover{
+		color:white;
+		border: solid white 1px;
+	}
+	div#barbutton2:hover{
+		color:white;
+		border: solid white 1px;
+	}
 
 	div#barbutton2
 	{
+		cursor: grab;
+		text-align: center;
+		font-size: 15px;
 		height: 13px;
 		width: 50px;
 
@@ -587,11 +601,12 @@
 
 	div#upT
 	{
+		/* background-color: white; */
 		width: 0;
 		height: 0;
 		border-left: 10px solid transparent;
 		border-right: 10px solid transparent;
-		border-bottom: 10px solid #111;
+		border-bottom: 10px solid #ffffff;
 
 		position: absolute;
 		top: 5px;
@@ -604,7 +619,7 @@
 		height: 0;
 		border-left: 10px solid transparent;
 		border-right: 10px solid transparent;
-		border-top: 10px solid #111;
+		border-top: 10px solid #ffffff;
 
 		position: absolute;
 		bottom: 5px;
@@ -923,6 +938,10 @@
 
 	div#yellowBox1
 	{
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
 		width: 140px;
 		height: 70px;
 		z-index: 1;
@@ -944,7 +963,11 @@
 	}
 
 	div#yellowBox2
-	{
+	{	
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
 		width: 140px;
 		height: 70px;
 		z-index: 1;
